@@ -1,38 +1,171 @@
-.App {
-  text-align: center;
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #000428, #004e92);
+  color: white;
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Add spacing between navbar and content */
+.navbar + .content-center {
+  margin-top: 40px; /* Adds space between navbar and the next section */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Content Centering Styles */
+.content-center {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+
+.nav-btn {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  background: black;
+  color: cyan;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-@keyframes App-logo-spin {
+.nav-btn:hover {
+  background: cyan;
+  color: black;
+}
+
+.nav-btn.active {
+  background: cyan;
+  color: black;
+}
+
+/* Content Container */
+.content-container {
+  text-align: center;
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Headings */
+.main-heading {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: cyan;
+  text-shadow: 2px 2px 5px black;
+}
+
+/* Input Field */
+.qr-input {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 20px;
+  width: 60%;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.qr-input::placeholder {
+  color: gray;
+}
+/* QR Code Container */
+.qr-container {
+  margin: 20px auto;
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Download Button */
+.qr-download-btn {
+  display: block;
+  margin: 10px auto 0;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(to right, #0072ff, #00c6ff);
+  color: black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.qr-download-btn:hover {
+  background: black;
+  color: cyan;
+}
+
+/* Animations */
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: scale(0.95);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: scale(1);
   }
 }
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Common Centering Styles */
+.content-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Subtext Styling */
+.subtext {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #cce7ff;
+}
+
+/* File Input Styling (Decode Tab) */
+.qr-file-input {
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+}  
